@@ -1,11 +1,14 @@
 import React from 'react'
 import Dessserts from './components/Dessserts'
+import { ShopcontextProvider } from './context/Shop-context'
 
 const App = () => {
   return (
-    <>
-    <Dessserts />
-    </>
+    <ShopcontextProvider> 
+      <Dessserts />
+    </ShopcontextProvider>
+    
+ 
   )
 }
 

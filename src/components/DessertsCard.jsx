@@ -4,7 +4,7 @@ import AddCart from "./AddCart";
 import { useState } from "react";
 
 
-const DessertsCard = ({ image, name, category, price }) => {
+const DessertsCard = ({ image, name, category, price, index }) => {
   const [openCart, setOpenCart]= useState(false)
   
   return (
@@ -22,7 +22,7 @@ const DessertsCard = ({ image, name, category, price }) => {
         <span
          onClick={()=>
           setOpenCart(true)
-        }>{openCart? <AddCart openCart={openCart} setOpenCart={setOpenCart} /> : <Cart/>}</span>
+        }>{openCart? <AddCart openCart={openCart} setOpenCart={setOpenCart} itemId={index} /> : <Cart/>}</span>
         
       </div>
       <div className="font-semibold self-start flex flex-col">
