@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import increment from "/assets/images/icon-increment-quantity.svg";
 import decrement from "/assets/images/icon-decrement-quantity.svg";
 
-import { ShopContext } from "../context/Shop-context";
+import { ShopContext } from "../context/ShopContext";
 
 const AddCart = ({ setOpenCart, itemId }) => {
   const { cartItems, addToCart, removeFromCart } = useContext(ShopContext);

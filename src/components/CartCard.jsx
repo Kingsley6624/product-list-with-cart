@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import emptyCart from "/assets/images/illustration-empty-cart.svg";
-import { ShopContext } from "../context/Shop-context";
+import { ShopContext } from "../context/ShopContext";
 import CartList from "./CartList";
 import carbon from "/assets/images/icon-carbon-neutral.svg";
 
-const CartCard = ({setModal}) => {
+const CartCard = ({ setModal }) => {
   const { cartItems, getTotalCartAmount } = useContext(ShopContext);
   const numberOfItems = Object.values(cartItems).reduce(
     (sum, value) => sum + value,
@@ -12,7 +12,6 @@ const CartCard = ({setModal}) => {
   );
 
   const sumTotal = getTotalCartAmount();
- 
 
   return (
     <div className="bg-[#fcf9f7] h-fit p-5 rounded-lg flex flex-col gap-3 mx-auto w-full basis-[30%]">
@@ -41,7 +40,7 @@ const CartCard = ({setModal}) => {
           </div>
 
           <button
-          onClick={()=>setModal(true)}
+            onClick={() => setModal(true)}
             type="submit"
             className="w-full bg-[#c73a0fff] text-[#fcf9f7ff] px-3 py-2 rounded-full self-center"
           >
