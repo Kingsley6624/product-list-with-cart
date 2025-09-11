@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import emptyCart from "/assets/images/illustration-empty-cart.svg";
 import { ShopContext } from "../context/Shop-context";
 import CartList from "./CartList";
 import carbon from "/assets/images/icon-carbon-neutral.svg";
 
-const CartCard = () => {
+const CartCard = ({setModal}) => {
   const { cartItems, getTotalCartAmount } = useContext(ShopContext);
   const numberOfItems = Object.values(cartItems).reduce(
     (sum, value) => sum + value,
@@ -12,9 +12,10 @@ const CartCard = () => {
   );
 
   const sumTotal = getTotalCartAmount();
+ 
 
   return (
-    <div className="bg-[#fcf9f7] h-fit p-5 rounded-lg flex flex-col gap-3 mx-auto w-full">
+    <div className="bg-[#fcf9f7] h-fit p-5 rounded-lg flex flex-col gap-3 mx-auto w-full basis-[30%]">
       <h3 className="font-semibold text-[#c73a0fff] text-xl">
         You Cart ({numberOfItems})
       </h3>
@@ -24,22 +25,25 @@ const CartCard = () => {
           <p className="text-[#87635aff]">Your added items will appear here</p>
         </div>
       ) : (
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-8">
           <CartList />
 
-          <div className="flex justify-between">
-            <p>Order Total</p>
-            <span>${sumTotal}</span>
+          <div className="flex justify-between text-[#260f08ff]">
+            <p>Order Total:</p>
+            <span className="font-bold">${sumTotal}</span>
           </div>
-          <div className="flex justify-center w-full p-3 bg-[#f4edebff]">
+
+          <div className="flex justify-center w-full p-3 bg-[#f4edebff] rounded-md">
             <img src={carbon} alt="carbon-tree" />
-            <p>
+            <p className="text-[#260f08ff]">
               This is a <b>carbon-neutral</b> delivery
             </p>
           </div>
+
           <button
+          onClick={()=>setModal(true)}
             type="submit"
-            className="bg-[#c73a0fff] text-[#fcf9f7ff] px-3 py-2 rounded-full self-center"
+            className="w-full bg-[#c73a0fff] text-[#fcf9f7ff] px-3 py-2 rounded-full self-center"
           >
             Confirm Order
           </button>
