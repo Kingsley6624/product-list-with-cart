@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
-import CartItem from "./CartItem.JSX";
+import CartItem from "./CartItem";
 import data from "../data/data.json";
 import remove from "/assets/images/icon-remove-item.svg";
 
