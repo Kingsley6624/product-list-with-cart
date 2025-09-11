@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import Dessserts from './components/Dessserts'
-import { ShopContextProvider } from './context/ShopContext'
+import { ShopContextProvider } from './context/Shop-context'
 import RecieptModal from './components/RecieptModal'
 
 const App = () => {
