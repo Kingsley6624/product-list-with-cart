@@ -5,7 +5,7 @@ import confirm from "/assets/images/icon-order-confirmed.svg";
 const RecieptModal = ({ setModal }) => {
   return (
     <div className="fixed inset-0 bg-[#f4edebff]/50 flex justify-center items-center z-40">
-      <div className="bg-[#fcf9f7ff] w-[35%] z-50 p-4 rounded-md shadow-md">
+      <div className="bg-[#fcf9f7ff] w-[95%] md:w-[35%] z-50 p-4 rounded-md shadow-md">
         <div className="flex flex-col gap-6">
           <img className="w-8 h-8" src={confirm} alt="" />
           <div>
